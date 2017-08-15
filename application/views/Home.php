@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<?php echo $url_css?>bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $url_css?>bootstrap-grid.min.css">
     <link rel="stylesheet" href="<?php echo $url_css?>bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css?>font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $url_css?>style.css">
 <!-- Js -->
     <script type="text/javascript" src="<?php echo $url_js;?>jquery-3.2.1.min.js"></script>
@@ -158,18 +159,18 @@
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT US</a>
+                        <a class="nav-link" href="#ibt_contact_us">CONTACT US</a>
                     </li>
                 </div>
             </ul>
         </div>
     </nav>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <!--ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+        </ol -->
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-1.jpeg" alt="First slide">
@@ -193,14 +194,14 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <!--a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
+        </a -->
     </div>
 </header>
 <div class="container bg-white" style="margin-top: 4%">
@@ -359,7 +360,8 @@
 <div class="container bg-white" style="margin-top: 4%;">
     <div class="row" style="padding: 15px;">
         <div class="col text-center abt_us">
-            <h2>About us</h2>
+            <h3>About us</h3>
+            <hr class="pf_hr"/>
             <a href="" data-toggle="modal" data-target="#exampleModal">Click Here to read more about Interbind</a>
         </div>
     </div>
@@ -383,6 +385,7 @@
             </div>
         </div>
     </div>
+    <!-- modal ends here-->
     <div class="row" style="padding: 15px;">
         <div class="col text-left why_ibt">
             <h4>Why Interbind ?</h4>
@@ -390,7 +393,7 @@
             <div class="row" style="margin-top: 5%;padding: 15px;">
                 <div class="col text-center">
                     <h5>Process oriented</h5>
-                    <hr class="why_hr">
+                    <hr class="hr">
                     <p>We have defined standard set of process to be followed during product development or service deliveries. These processes can also be customised based on our customer needs.</p>
                     <p>As we follow well defined process during project execution, end results are always predictable and consistent for every projects completed at Interbind.</p>
                 </div>
@@ -404,7 +407,7 @@
                 </div>
                 <div class="col text-center">
                     <h5>Code Quality</h5>
-                    <hr class="why_hr">
+                    <hr class="hr">
                     <p>We always believe in high quality deliverables and that's why we have implemented stringent process in code reviews.</p>
                     <p>Our developers must adhere to the industry's best practices and guidelines while writing programs regardless of technologies or programming languages used.</p>
                 </div>
@@ -412,7 +415,7 @@
             <div class="row" style="margin-top: 5%; padding: 15px;">
                 <div class="col text-center">
                     <h5>Customer Satisfaction</h5>
-                    <hr class="why_hr">
+                    <hr class="hr">
                     <p>We work very closely with our customers to understand their problems and issues in making their business & IT systems co-exist.</p>
                     <p>We spend great deal of our time in talking to our customers to get full context of the problem before jumping into offering solutions.</p>
                 </div>
@@ -426,11 +429,202 @@
                 </div>
                 <div class="col text-center">
                     <h5>Unique Team & Approach</h5>
-                    <hr class="why_hr">
+                    <hr class="hr">
                     <p>Our core strength is the experience and expertise of our team of architect, developers and testers with focus on high quality and timely deliveries.</p>
                     <p>Our team is trained extermely on process, design and technologies before we start the actual implementation.</p>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-white" style="margin-top: 4%">
+    <div class="row" style="padding: 15px;">
+        <div class="col text-center ibt_portfolio">
+            <h3>Our Portfolio</h3>
+            <hr class="hr"/>
+            <p>Some of our projects and systems to show case our experience and expertise in software development & services. We have implemented various projects from simple web application to complicated systems integration.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <div class="ibt_pf_icons">
+                <div class="ibt_pf_sprite_icons wh_icon"></div>
+                <h5>Warehouse Integration</h5>
+                <hr class="hr"/>
+                <p>Front end systems integrated with warehouse for real time order fulfilments, stock management etc.,</p>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="ibt_pf_icons">
+                <div class="ibt_pf_sprite_icons bi_icon"></div>
+                <h5>Business Integration</h5>
+                <hr class="hr"/>
+                <p>Business model & services development, Business interfaces, Enabled business integration with other business via FTP, AS2, XML, Flat files, REST / Web Services</p>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="ibt_pf_icons">
+                <div class="ibt_pf_sprite_icons sap_icon"></div>
+                <h5>SAP Integration</h5>
+                <hr class="hr"/>
+                <p>Enabled SAP system integration via SAP IDOC Formats, Reports and ABAP.</p>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="ibt_pf_icons">
+                <div class="ibt_pf_sprite_icons bui_icon"></div>
+                <h5>Backend / Business Services</h5>
+                <hr class="hr"/>
+                <p>Implemented backend services to offer connectivity via website, interfaces etc.,</p>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 3%;">
+        <div class="col text-center">
+            <div class="ibt_pf_icons">
+                <div class="ibt_pf_sprite_icons ma_icon"></div>
+                <h5>Mobile App Development</h5>
+                <hr class="hr"/>
+                <p>Native mobile application development in iOS & Android platforms. Hybrid application development using Ionic 2 & Angular 2.</p>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="ibt_pf_icons">
+                <div class="ibt_pf_sprite_icons esb_icon"></div>
+                <h5>Enterprise Service Bus</h5>
+                <hr class="hr"/>
+                <p>Configured, provisioned and implemented enterprise service bus to enable efficient integrations between various services within enterprise.</p>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="ibt_pf_icons">
+                <div class="ibt_pf_sprite_icons pf_icon"></div>
+                <h5>Performance Refactoring</h5>
+                <hr class="hr"/>
+                <p>Detail study of the current system to understand and remove performace bottle necks. Refactored to implement best practices and re-designed to accommodate scalability & extensibility.</p>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="ibt_pf_icons">
+                <div class="ibt_pf_sprite_icons html_icon"></div>
+                <h5>HTML5, CSS3 & Bootstrap</h5>
+                <hr class="hr"/>
+                <p>Website development using best of the industry's framework (Bootstrap) and responsiveness through HTML5 and CSS3.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container bg-white" style="margin-top: 4%;">
+    <div class="row" style="padding: 15px;">
+        <div class="col text-center join_us">
+            <h3>Join us</h3>
+            <hr class="hr"/>
+            <p>If you share our vision and wants to be part of our mission, email your resume to <a href="mailto:careers@interbind.in">careers@interbind.in</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col join_us">
+            <h5 style="text-decoration: underline">Current Openings</h5>
+            <p style="font-size: 14px">Thank you for your interest in Interbind Technologies Pvt Ltd. We do not have any job opening at the moment. Please come back again later.</p>
+        </div>
+    </div>
+</div>
+<div class="container bg-white" style="margin-top: 4%" id="ibt_contact_us">
+    <div class="row" style="padding: 15px;">
+        <div class="col">
+            <div class="col text-center contact_us">
+                <h3>Contact us</h3>
+                <hr class="pf_hr"/>
+                <a href="" data-toggle="modal" data-target="#formModal">Click Here to send message</a>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 4%">
+        <div class="col contact_us text-center">
+            <div class="row" style="margin-top: 3%;">
+                <div class="col text-center location_address">
+                    <h6>India</h6>
+                    <hr class="hr"/>
+                    <p><i class="fa fa-map-marker"></i> 2, Thiruvalluvar Salai,Kumaran Nagar,<br> Sholinganallur, Chennai - 600119, INDIA</p>
+                    <p><i class="fa fa-phone"></i> Phone: +91 44 2450 1427 / 29</p>
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:contact@interbind.in">contac@interbind.in</a></p>
+                    <p><i class="fa fa-globe"></i> <a href="#">www.interbind.in</a></p>
+                </div>
+                <div class="col text-center location_address">
+                    <h6>Singapore</h6>
+                    <hr class="hr"/>
+                    <p><i class="fa fa-map-marker"></i> 90 Cecil Street #10-02 <br/> Singapore 069531</p>
+                    <p><i class="fa fa-phone"></i> Phone: +65 6221 1008</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Form Modal -->
+<div class="modal fade bd-example-modal-lg" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true" style="width: 90%;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 150%;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModalLabel" style="margin: 0 auto; font-size: 25px; font-weight: 400">Contact us</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body form_modal">
+                <p>Thank you for your interest in Interbind Technologies. Please provide the following information about your business needs to help us serve you better. This information will enable us to route your request to the appropriate person. You should receive a response within 1 working day.</p>
+                <div class="row">
+                    <div class="col text-center">
+                        <form id="form_contact_us">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your name" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your subject" name="subject" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <textarea class="form-control text_area" placeholder="Enter your message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form modal ends here-->
+<div class="container bg-white" style="margin-top: 4%">
+    <div class="row" style="padding: 15px">
+        <div class="col text-center connect_us">
+            <h3>Connect with us</h3>
+            <hr class="hr"/>
+            <a class="message" href="mailto:contact@interbind.in"><i class="fa fa-envelope-square fa-2x"></i></a>
+            <a class="twitter" href="https://twitter.com/interbind" ><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a class="facebook" href="https://www.facebook.com/interbind/"><i class="fa fa-facebook-square fa-2x"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/company/interbind-technologies"><i class="fa fa-linkedin-square fa-2x"></i></a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-white" style="margin-top: 4%">
+    <div class="row" style="padding: 15px">
+        <div class="col text-center">
+            <p>© 2012-2017 Interbind Technologies Private Limited.</p>
+        </div>
+        <div class="col text-center">
+            <p>Write to us <a href="mailto:contact@interbind.in">contact@interbind.in</a></p>
         </div>
     </div>
 </div>
