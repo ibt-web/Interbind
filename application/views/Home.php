@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php
+
+    $url_css = base_url().'template/css/';
+    $url_js = base_url().'template/js/';
+    $url_img = base_url().'template/img/';
+    ?>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interbind Technologies</title>
+<!-- Title icon-->
+    <link rel="icon" href="<?php echo $url_img;?>title_icon.png">
+<!--Css -->
+    <link rel="stylesheet" href="<?php echo $url_css?>jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css?>jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css?>jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css?>bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css?>bootstrap-grid.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css?>bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css?>style.css">
+<!-- Js -->
+    <script type="text/javascript" src="<?php echo $url_js;?>jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo $url_js;?>typed.min.js"></script>
+    <script type="text/javascript" src="<?php echo $url_js;?>popper.min.js"></script>
+    <script type="text/javascript" src="<?php echo $url_js;?>bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var caption1 = {
+                strings: ["CREATIVE"],
+                typeSpeed: 60,
+                startDelay: 0,
+                backDelay: 5000,
+                loop: false,
+                smartBackspace: true // Default value
+            };
+            var caption2 = {
+                strings: ["WEB DEVELOPERS"],
+                typeSpeed: 60,
+                startDelay: 5500,
+                backDelay: 4000,
+                loop: false,
+                smartBackspace: true // Default value
+            };
+            var caption3 = {
+                strings: ["SYSTEM INTEGRATORS"],
+                typeSpeed: 60,
+                startDelay: 10500,
+                backDelay: 4000,
+                loop: false,
+                smartBackspace: true // Default value
+            };
+            /*var caption_txt = {
+                strings: ["We always implement new, different and fresh ideas","We develop modern, trendy and state of the art websites using latest technologies","We enable B2B, B2C integration using advanced framework with scope for scaling in the future"],
+                typeSpeed: 20,
+                backDelay: 4000,
+                loop: true,
+                loopCount: Infinity,
+                smartBackspace: true // Default value
+            };*/
+
+            var typed_1 = new Typed(".caption1", caption1);
+            var typed_2 = new Typed(".caption2", caption2);
+            var typed_3 = new Typed(".caption3", caption3);
+            //var caption_typed = new Typed(".element_txt", caption_txt);
+
+            $('.carousel').carousel({
+                pause: false
+            });
+            $(function () {
+                $(document).scroll(function () {
+                    var $nav = $(".fixed-top");
+                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                    var $nav_link = $(".navbar-light .navbar-nav .nav-link");
+                    $nav_link.toggleClass('scrolled-link', $(this).scrollTop() > $nav.height());
+                });
+            });
+            $(".icon_col_1").hover(function () {
+                $(".serv_hr_1").toggle("slow");
+                $(".etp_info").toggle("slow");
+            });
+            $(".icon_col_2").hover(function () {
+                $(".serv_hr_2").toggle("slow");
+                $(".etp_int_info").toggle("slow");
+            });
+            $(".icon_col_3").hover(function () {
+                $(".serv_hr_3").toggle("slow");
+                $(".mg_serv_info").toggle("slow");
+            });
+            $(".icon_col_4").hover(function () {
+                $(".serv_hr_4").toggle("slow");
+                $(".mob_info").toggle("slow");
+            });
+            $(".icon_col_5").hover(function () {
+                $(".serv_hr_5").toggle("slow");
+                $(".etp_sln_info").toggle("slow");
+            });
+            $(".icon_col_6").hover(function () {
+                $(".serv_hr_6").toggle("slow");
+                $(".ecom_info").toggle("slow");
+            });
+            $(".icon_col_7").hover(function () {
+                $(".serv_hr_7").toggle("slow");
+                $(".offshore_info").toggle("slow");
+            });
+            $(".icon_col_8").hover(function () {
+                $(".serv_hr_8").toggle("slow");
+                $(".conslt_info").toggle("slow");
+            });
+            $(".icon_col_9").hover(function () {
+                $(".serv_hr_9").toggle("slow");
+                $(".it_supt_info").toggle("slow");
+            });
+        });
+    </script>
+</head>
+<body class="bg-light">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav w-100">
+                <div class="col text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                </div>
+                <div class="col text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SERVICES</a>
+                    </li>
+                </div>
+                <div class="col text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT US</a>
+                    </li>
+                </div>
+                <div class="col-4 text-center">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#"><img src="<?php echo $url_img;?>logo_name_caption.png" width="280"></a>
+                    </li>
+                </div>
+                <div class="col text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PORTFOLIO</a>
+                    </li>
+                </div>
+                <div class="col text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">JOIN US</a>
+                    </li>
+                </div>
+                <div class="col text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT US</a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-1.jpeg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>WE ARE <span class="caption1" style="color: #027db3"></span></h1>
+                    <h5>We always implement new, different and fresh ideas</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-2.jpeg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>WE ARE <span class="caption2" style="color: #027db3"></span></h1>
+                    <h5>We develop modern, trendy and state of the art websites using latest technologies</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-3.jpeg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>WE ARE <span class="caption3" style="color: #027db3"></span></h1>
+                    <h5>We enable B2B, B2C integration using advanced framework with scope for scaling in the future</h5>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+<div class="container bg-white" style="margin-top: 4%">
+    <div class="row" style="padding: 15px">
+        <div class="col">
+            <div class="row">
+                <div class="col text-center ibt_header">
+                    <h3>Our Vision</h3>
+                    <hr/>
+                </div>
+            </div>
+            <div class="row" style="padding: 10px">
+                <div class="col text-center ibt_content">
+                    <p>Interbind's vision is to become the strategic IT partner for our customers world-wide, a one-stop shop for all technological support required for our client's business needs. We aim to become a globally renowned corporation with a highly competent and passionate team delivering best-in-class, reliable and scalable IT solutions for businesses.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col text-center ibt_header">
+                    <h3>Our Mission</h3>
+                    <hr/>
+                </div>
+            </div>
+            <div class="row" style="padding: 10px">
+                <div class="col text-center ibt_content">
+                    <p>Our mission is to combine our technical expertise and domain knowledge to provide cost-effective IT solutions for our client's business needs. The company’s core belief lies in service and quality. We will strive to stretch beyond the call of duty to deliver with trust and commitment in the professional world. Achieving customer delight is our motto.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container bg-white" style="margin-top: 4%">
+    <div class="row" style="padding: 15px;">
+        <div class="col text-center ibt_header">
+            <h3>Our Services</h3>
+            <hr/>
+            <div class="row" style="padding: 10px">
+                <div class="col text-center ibt_content">
+                    <p>We offer a range of standard and bespoke software development and support services to match your business needs. At Interbind, we have handled projects in a wide spectrum from simple website to complicated business to business integration services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 10px; margin-top: 4%;">
+        <div class="col text-center ibt_serv_icons icon_col_1">
+            <div style="padding: 10px;">
+               <div class="ibt_sprite_icons etp_icon"></div>
+                <h5>Enterprise Applications</h5>
+                <hr class="serv_hr_1"/>
+                <p class="ibt_serv_info etp_info">End to End Application Development Re-Engineering existing applications move to Cloud Computing Deployments Business Architecture Development Jumpstart Application Development Process</p>
+            </div>
+        </div>
+        <div class="col text-center ibt_serv_icons icon_col_2">
+            <div style=" padding: 10px;">
+                <div class="ibt_sprite_icons etp_int_icon"></div>
+                <h5>Enterprise Integration</h5>
+                <hr class="serv_hr_2"/>
+                <p class="ibt_serv_info etp_int_info">B2B & B2C Integration Initiatives
+                    Scope for integration and POC implementation
+                    Migration to Service Oriented Architecture
+                    Rapid & Continuous Deployments
+                    Devise Quick to Market Strategies</p>
+            </div>
+        </div>
+        <div class="col text-center ibt_serv_icons icon_col_3">
+            <div style="padding: 10px;">
+                <div class="ibt_sprite_icons mg_serv_icon"></div>
+                <h5>Managed Services</h5>
+                <hr class="serv_hr_3"/>
+                <p class="ibt_serv_info mg_serv_info">Design & Develop Managed Services
+                    Create New Services Portfolio
+                    Enable B2B through Services
+                    Web and Microservices Platforms
+                    API Development & Integrations</p>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 10px; margin-top: 4%;">
+        <div class="col text-center ibt_serv_icons icon_col_4">
+            <div style="padding: 10px;">
+                <div class="ibt_sprite_icons mob_icon"></div>
+                <h5>Mobile Applications</h5>
+                <hr class="serv_hr_4"/>
+                <p class="ibt_serv_info mob_info">Native, HTML5 and Hybrid Applications
+                    iOS / iPhone / iPad Mobile Applications
+                    Android Mobile Applications
+                    Windows 10 Mobile Applications
+                    Enterprise Mobility Solutions</p>
+            </div>
+        </div>
+        <div class="col text-center ibt_serv_icons icon_col_5">
+            <div style=" padding: 10px;">
+                <div class="ibt_sprite_icons etp_sln_icon"></div>
+                <h5>Enterprise Solutions</h5>
+                <hr class="serv_hr_5"/>
+                <p class="ibt_serv_info etp_sln_info">Sugar CRM / vTiger CRM Solutions
+                    ERP Solutions
+                    Business Process Management
+                    SaaS Based System Deployments
+                    Custom Application Development</p>
+            </div>
+        </div>
+        <div class="col text-center ibt_serv_icons icon_col_6">
+            <div style="padding: 10px;">
+                <div class="ibt_sprite_icons ecom_icon"></div>
+                <h5>ECommerce Web Solutions</h5>
+                <hr class="serv_hr_6"/>
+                <p class="ibt_serv_info ecom_info">Magento ECommerce Development
+                    Web Design and Development
+                    SEO / SEM and Branding Services
+                    Consultancy on Web 2.0 Solutions
+                    Open Source CRM and CSM Solutions</p>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 10px; margin-top: 4%;">
+        <div class="col text-center ibt_serv_icons icon_col_7">
+            <div style="padding: 10px;">
+                <div class="ibt_sprite_icons offshore_icon"></div>
+                <h5>Offshore Development Team</h5>
+                <hr class="serv_hr_7"/>
+                <p class="ibt_serv_info offshore_info">Product Engineering
+                    Conceptualization of Business Ideas
+                    Prototype Development
+                    Implementation and Launch
+                    Post Launch Support and Enhancements</p>
+            </div>
+        </div>
+        <div class="col text-center ibt_serv_icons icon_col_8">
+            <div style=" padding: 10px;">
+                <div class="ibt_sprite_icons conslt_icon"></div>
+                <h5>Consulting</h5>
+                <hr class="serv_hr_8"/>
+                <p class="ibt_serv_info conslt_info">Business Process and System Design
+                    Business and IT Systems Improvements
+                    Re-Engineering Existing Systems
+                    Project Scoping and Planning
+                    Project Management Support</p>
+            </div>
+        </div>
+        <div class="col text-center ibt_serv_icons icon_col_9">
+            <div style="padding: 10px;">
+                <div class="ibt_sprite_icons it_supt_icon"></div>
+                <h5>IT Support</h5>
+                <hr class="serv_hr_9"/>
+                <p class="ibt_serv_info it_supt_info">24x7 Technical Support
+                    Multi-level Support
+                    T&M IT Support
+                    Corporate Training
+                    Project Management Support</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container bg-white" style="margin-top: 4%;">
+    <div class="row" style="padding: 15px;">
+        <div class="col text-center abt_us">
+            <h2>About us</h2>
+            <a href="" data-toggle="modal" data-target="#exampleModal">Click Here to read more about Interbind</a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 150%;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="margin: 0 auto; font-size: 25px; font-weight: 400">About us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Interbind Technologies Private Limited is a global IT Systems Integration, Development and Consulting Company committed to provide services to our clients with open source computing. We have always aimed to be value partners to our clients, taking pride in their business growth. We always thrive to provide better system integration solutions with intensive analysis and technical expertise that always focus on client needs. We are positioned to deliver rapid, reliable and robust Information Technology solutions that work.</p>
+                    <p>Interbind Technologies Private Limited is a specific venture with a team of young professionals working smart for providing IT solutions to Large and Medium sized organisation’s across various verticals on IT Development and Services. Driven by a group of young Entrepreneurs & strong functional background, we cater to customer needs with speed, reliability and cost efficient. Every employee plays an important role in the company’s success. We believe that open communication and simple rules is the key to our success.</p>
+                    <p>We at Interbind all of us enjoy a strong culture of fun collaboration, creativity and knowledge sharing. All these make Interbind a fun and challenging place to work.</p>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col text-left why_ibt">
+            <h4>Why Interbind ?</h4>
+            <p>Our customers choose us because we provide simple and pragmatic solution to problems using the best breed of technologies. We deliver on time with consistent result at all times, making us one of the most reliable software services provider.</p>
+            <div class="row" style="margin-top: 5%;padding: 15px;">
+                <div class="col text-center">
+                    <h5>Process oriented</h5>
+                    <hr class="why_hr">
+                    <p>We have defined standard set of process to be followed during product development or service deliveries. These processes can also be customised based on our customer needs.</p>
+                    <p>As we follow well defined process during project execution, end results are always predictable and consistent for every projects completed at Interbind.</p>
+                </div>
+                <div class="col text-center">
+                    <img src="<?php echo $url_img;?>process oriented.png" width="200" height="200">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 5%; padding: 15px;">
+                <div class="col text-center">
+                    <img src="<?php echo $url_img;?>code_quality.png" width="200" height="200">
+                </div>
+                <div class="col text-center">
+                    <h5>Code Quality</h5>
+                    <hr class="why_hr">
+                    <p>We always believe in high quality deliverables and that's why we have implemented stringent process in code reviews.</p>
+                    <p>Our developers must adhere to the industry's best practices and guidelines while writing programs regardless of technologies or programming languages used.</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 5%; padding: 15px;">
+                <div class="col text-center">
+                    <h5>Customer Satisfaction</h5>
+                    <hr class="why_hr">
+                    <p>We work very closely with our customers to understand their problems and issues in making their business & IT systems co-exist.</p>
+                    <p>We spend great deal of our time in talking to our customers to get full context of the problem before jumping into offering solutions.</p>
+                </div>
+                <div class="col text-center">
+                    <img src="<?php echo $url_img;?>customer-satisfaction.png" width="200" height="200">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 5%; padding: 15px;">
+                <div class="col text-center">
+                    <img src="<?php echo $url_img;?>team_approach.png" width="200" height="200">
+                </div>
+                <div class="col text-center">
+                    <h5>Unique Team & Approach</h5>
+                    <hr class="why_hr">
+                    <p>Our core strength is the experience and expertise of our team of architect, developers and testers with focus on high quality and timely deliveries.</p>
+                    <p>Our team is trained extermely on process, design and technologies before we start the actual implementation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

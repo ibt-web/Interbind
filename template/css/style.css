@@ -1,0 +1,154 @@
+.navbar {
+    padding: 0rem 1rem !important;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    margin-top: 15px;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+.navbar-light .navbar-nav .active>.nav-link {
+    color: white;
+}
+.fixed-top.scrolled {
+    background-color: #fff !important;
+    color: rgba(0,0,0,.5);
+    transition: background-color 200ms linear;
+}
+.scrolled-link {
+    color: rgba(0,0,0,.5) !important;
+}
+.carousel_img {
+    min-height: 300px;
+
+}
+.carousel-caption {
+    bottom: 230px !important;
+}
+.ibt_header h3 {
+    font-weight: 300;
+}
+.serv_header h3 {
+    font-weight: 300;
+}
+.ibt_header hr {
+    width: 60px;
+    color: rgba(0,0,0,.5);
+}
+
+.ibt_content p {
+    font-weight: 100;
+    text-align: justify;
+}
+.ibt_serv_icons h5 {
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 5%;
+}
+
+.ibt_serv_icons .ibt_sprite_icons{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    height:100px;
+    background: url(../img/sprite.png);
+    text-align: center;
+}
+
+.ibt_serv_info {
+    display: none;
+    font-size: 12px;
+    font-weight: 100;
+    text-align: justify;
+    padding: 12px;
+}
+
+.serv_hr_1, .serv_hr_2, .serv_hr_3, .serv_hr_4, .serv_hr_4, .serv_hr_5, .serv_hr_6, .serv_hr_7, .serv_hr_8, .serv_hr_9
+{
+    display: none;
+    width: 80px;
+}
+
+.etp_icon{
+    background-position: -10px 0 !important;
+}
+
+.etp_int_icon{
+    background-position: -140px 0 !important;
+}
+
+.mg_serv_icon{
+    background-position: -260px 0 !important;
+}
+
+.mob_icon{
+    background-position: -390px 0 !important;
+}
+
+.etp_sln_icon{
+    background-position: -515px 0 !important;
+}
+
+.ecom_icon{
+    background-position: -650px 0 !important;
+}
+.offshore_icon{
+    background-position: -780px 0 !important;
+}
+
+.conslt_icon{
+    background-position: -920px 0 !important;
+}
+
+.it_supt_icon{
+    background-position: -1070px 0 !important;
+}
+
+.abt_us h2
+{
+    font-weight: 300;
+}
+
+.abt_us a
+{
+    color: #FDAC4C;
+}
+
+.abt_us a:hover
+{
+    text-decoration: none;
+}
+
+.abt_us a:focus
+{
+    outline: none;
+}
+
+.why_ibt p
+{
+    font-weight: 100;
+    text-align: justify;
+}
+
+.why_ibt h4
+{
+    font-weight: 500;
+}
+
+.why_ibt h5
+{
+    font-weight: 400;
+}
+
+.why_hr
+{
+    width: 80px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.modal-body p
+{
+    text-align: justify;
+    font-weight: 300;
+}
