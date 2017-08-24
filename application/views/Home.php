@@ -3,9 +3,9 @@
 <head>
     <?php
 
-    $url_css = base_url().'template/css/';
-    $url_js = base_url().'template/js/';
-    $url_img = base_url().'template/img/';
+    $url_css = base_url().'assets/css/';
+    $url_js = base_url().'assets/js/';
+    $url_img = base_url().'assets/img/';
     ?>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -536,7 +536,7 @@
             <div class="col text-center contact_us">
                 <h3>Contact us</h3>
                 <hr class="pf_hr"/>
-                <a href="" data-toggle="modal" data-target="#formModal">Click Here to send message</a>
+                <a href="" data-toggle="modal" data-target="#formModal" data-backdrop="static">Click Here to send message</a>
             </div>
         </div>
     </div>
@@ -576,11 +576,11 @@
                 <p>Thank you for your interest in Interbind Technologies. Please provide the following information about your business needs to help us serve you better. This information will enable us to route your request to the appropriate person. You should receive a response within 1 working day.</p>
                 <div class="row">
                     <div class="col text-center">
-                        <form id="form_contact_us">
+                        <?php echo form_open('contact_form'); ?>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your name" name="name" required>
+                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your name" name="username" required>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your email" name="email" required>
@@ -591,12 +591,12 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <textarea class="form-control text_area" placeholder="Enter your message"></textarea>
+                                        <textarea class="form-control text_area" name="message" placeholder="Enter your message" required></textarea>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="submit">Submit</button>
-                        </form>
+                            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
