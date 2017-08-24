@@ -298,8 +298,9 @@
 }
 
 .form_modal p{
-    font-size: 12px;
-    font-weight: 100;
+    font-size: 15px;
+    font-weight: 400;
+	margin-bottom: 35px;
 }
 
 .connect_us h3{

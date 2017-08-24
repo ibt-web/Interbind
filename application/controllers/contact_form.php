@@ -5,7 +5,10 @@ class Contact_form extends CI_Controller
 {
 	public function index()
 	{
+		$response = array();
+		$msg = '';
 		$this->load->library('form_validation');
+		$this->load->model('Form');
 		
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required');
@@ -14,12 +17,27 @@ class Contact_form extends CI_Controller
 
 		if ($this->form_validation->run() == FALSE)
 		{
-				echo "Error in form fields";
+				$msg = validation_errors();
+				$respone['ok'] = 0;
 		}
 		else
 		{
-				echo "success";
+			
+			$data = array(
+						'user_name' => $this->input->post('username'),
+						'email' => $this->input->post('email'),
+						'subject' => $this->input->post('subject'),
+						'message' => $this->input->post('message')
+						);
+		
+					
+			$this->Form->insert($data);
+			$msg = "Thank you for choosing Interbind. Our customer executive will contact you shortly";
+			$response['ok'] = 1;
 		}
+		
+		$response['message'] = $msg;
+		echo json_encode($response);
 	}
 }
 

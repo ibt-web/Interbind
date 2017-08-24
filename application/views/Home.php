@@ -116,6 +116,39 @@
                 $(".serv_hr_9").toggle("slow");
                 $(".it_supt_info").toggle("slow");
             });
+			
+			$("#submit").click(function(){
+				event.preventDefault();
+				var form = $("#form_contact_us").serializeArray();
+			
+				$.ajax({
+					method: 'POST',
+					url: "<?php echo base_url(); ?>" + "index.php/contact_form",
+					data:form,
+					dataType: 'json'
+				}).done(function(response){
+					if(response.ok == 1){
+						$(".success_msg").show();
+						$(".success_msg").html(response.message);
+						$(".error_msg").hide();
+						$("#form_contact_us").hide();
+					}
+					else{
+						$(".error_msg").show();
+						$(".error_msg").html(response.message);
+						$(".success_msg").hide();
+					}
+				
+				});
+			});
+			
+			$(".btn_form_close").click(function(){
+				$(".success_msg").hide();
+				$(".error_msg").hide();
+				$("#form_contact_us")[0].reset();
+				$("#form_contact_us").show();
+			});
+			
         });
     </script>
 </head>
@@ -536,7 +569,7 @@
             <div class="col text-center contact_us">
                 <h3>Contact us</h3>
                 <hr class="pf_hr"/>
-                <a href="" data-toggle="modal" data-target="#formModal" data-backdrop="static">Click Here to send message</a>
+                <a href="" data-toggle="modal" data-target="#formModal" data-backdrop="static" data-keyboard="false">Click Here to send message</a>
             </div>
         </div>
     </div>
@@ -568,35 +601,37 @@
         <div class="modal-content" style="width: 150%;">
             <div class="modal-header">
                 <h5 class="modal-title" id="formModalLabel" style="margin: 0 auto; font-size: 25px; font-weight: 400">Contact us</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close btn_form_close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body form_modal">
                 <p>Thank you for your interest in Interbind Technologies. Please provide the following information about your business needs to help us serve you better. This information will enable us to route your request to the appropriate person. You should receive a response within 1 working day.</p>
+				<div class="error_msg" style="display:none;margin-bottom: 10px;"></div>
+				<div class="success_msg text-center" style="display:none; margin-bottom: 10px; color:white; padding: 10px; background-color: darkseagreen;"></div>
                 <div class="row">
                     <div class="col text-center">
-                        <?php echo form_open('contact_form'); ?>
+                        <form id="form_contact_us" method="post">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your name" name="username" required>
+                                        <input type="text" class="form-control" id="username" placeholder="Enter your name" name="username" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your email" name="email" required>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your subject" name="subject" required>
+                                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject" name="subject" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <textarea class="form-control text_area" name="message" placeholder="Enter your message" required></textarea>
+                                        <textarea class="form-control text_area" id="message" name="message" placeholder="Enter your message" required></textarea>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
-                        <?php echo form_close(); ?>
+                            <button class="btn btn-primary" id="submit" type="submit" id="submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
