@@ -30,8 +30,8 @@ class Contact_form extends CI_Controller
 						'message' => $this->input->post('message')
 						);
 		
-					
 			$this->Form->insert($data);
+			
 			$msg = "Thank you for choosing Interbind. Our customer executive will contact you shortly";
 			$response['ok'] = 1;
 		}

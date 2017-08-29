@@ -15,14 +15,15 @@
 <!-- Title icon-->
     <link rel="icon" href="<?php echo $url_img;?>title_icon.png">
 <!--Css -->
-    <link rel="stylesheet" href="<?php echo $url_css?>jquery-ui.min.css">
-    <link rel="stylesheet" href="<?php echo $url_css?>jquery-ui.structure.min.css">
-    <link rel="stylesheet" href="<?php echo $url_css?>jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="<?php echo $url_css?>bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $url_css?>bootstrap-grid.min.css">
-    <link rel="stylesheet" href="<?php echo $url_css?>bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="<?php echo $url_css?>font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo $url_css?>style.css">
+    <link rel="stylesheet" href="<?php echo $url_css;?>jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css;?>jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css;?>jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css;?>bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css;?>bootstrap-grid.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css;?>bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="<?php echo $url_css;?>font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo $url_css;?>animate.css">
+    <link rel="stylesheet" href="<?php echo $url_css;?>style.css">
 <!-- Js -->
     <script type="text/javascript" src="<?php echo $url_js;?>jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="<?php echo $url_js;?>typed.min.js"></script>
@@ -30,45 +31,8 @@
     <script type="text/javascript" src="<?php echo $url_js;?>bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            var caption1 = {
-                strings: ["CREATIVE"],
-                typeSpeed: 60,
-                startDelay: 0,
-                backDelay: 5000,
-                loop: false,
-                smartBackspace: true // Default value
-            };
-            var caption2 = {
-                strings: ["WEB DEVELOPERS"],
-                typeSpeed: 60,
-                startDelay: 5500,
-                backDelay: 4000,
-                loop: false,
-                smartBackspace: true // Default value
-            };
-            var caption3 = {
-                strings: ["SYSTEM INTEGRATORS"],
-                typeSpeed: 60,
-                startDelay: 10500,
-                backDelay: 4000,
-                loop: false,
-                smartBackspace: true // Default value
-            };
-            /*var caption_txt = {
-                strings: ["We always implement new, different and fresh ideas","We develop modern, trendy and state of the art websites using latest technologies","We enable B2B, B2C integration using advanced framework with scope for scaling in the future"],
-                typeSpeed: 20,
-                backDelay: 4000,
-                loop: true,
-                loopCount: Infinity,
-                smartBackspace: true // Default value
-            };*/
-
-            var typed_1 = new Typed(".caption1", caption1);
-            var typed_2 = new Typed(".caption2", caption2);
-            var typed_3 = new Typed(".caption3", caption3);
-            //var caption_typed = new Typed(".element_txt", caption_txt);
-
+		$(document).ready(function () {
+		
             $('.carousel').carousel({
                 pause: false
             });
@@ -80,47 +44,13 @@
                     $nav_link.toggleClass('scrolled-link', $(this).scrollTop() > $nav.height());
                 });
             });
-            $(".icon_col_1").hover(function () {
-                $(".serv_hr_1").toggle("slow");
-                $(".etp_info").toggle("slow");
-            });
-            $(".icon_col_2").hover(function () {
-                $(".serv_hr_2").toggle("slow");
-                $(".etp_int_info").toggle("slow");
-            });
-            $(".icon_col_3").hover(function () {
-                $(".serv_hr_3").toggle("slow");
-                $(".mg_serv_info").toggle("slow");
-            });
-            $(".icon_col_4").hover(function () {
-                $(".serv_hr_4").toggle("slow");
-                $(".mob_info").toggle("slow");
-            });
-            $(".icon_col_5").hover(function () {
-                $(".serv_hr_5").toggle("slow");
-                $(".etp_sln_info").toggle("slow");
-            });
-            $(".icon_col_6").hover(function () {
-                $(".serv_hr_6").toggle("slow");
-                $(".ecom_info").toggle("slow");
-            });
-            $(".icon_col_7").hover(function () {
-                $(".serv_hr_7").toggle("slow");
-                $(".offshore_info").toggle("slow");
-            });
-            $(".icon_col_8").hover(function () {
-                $(".serv_hr_8").toggle("slow");
-                $(".conslt_info").toggle("slow");
-            });
-            $(".icon_col_9").hover(function () {
-                $(".serv_hr_9").toggle("slow");
-                $(".it_supt_info").toggle("slow");
-            });
 			
-			$("#submit").click(function(){
-				event.preventDefault();
+			
+			$("#submit").on("click",function(){
+				
+				
 				var form = $("#form_contact_us").serializeArray();
-			
+				
 				$.ajax({
 					method: 'POST',
 					url: "<?php echo base_url(); ?>" + "index.php/contact_form",
@@ -140,9 +70,10 @@
 					}
 				
 				});
+				event.preventDefault();
 			});
 			
-			$(".btn_form_close").click(function(){
+			$(".btn_form_close").on("click",function(){
 				$(".success_msg").hide();
 				$(".error_msg").hide();
 				$("#form_contact_us")[0].reset();
@@ -155,6 +86,7 @@
 <body class="bg-light">
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+	<a class="nav_logo_small" href="#"><img src="<?php echo $url_img;?>logo_4.png" width="215"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -167,27 +99,27 @@
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SERVICES</a>
+                        <a class="nav-link" href="#ibt_services">SERVICES</a>
                     </li>
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT US</a>
+                        <a class="nav-link" href="#ibt_abt_us">ABOUT US</a>
                     </li>
                 </div>
                 <div class="col-4 text-center">
-                    <li class="nav-item">
-                        <a class="navbar-brand" href="#"><img src="<?php echo $url_img;?>logo_name_caption.png" width="280"></a>
+                    <li class="nav-item nav_logo">
+                        <a class="" href="#"><img src="<?php echo $url_img;?>logo_4.png" width="280"></a>
                     </li>
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">PORTFOLIO</a>
+                        <a class="nav-link" href="#ibt_portfolio">PORTFOLIO</a>
                     </li>
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">JOIN US</a>
+                        <a class="nav-link" href="#ibt_joinus">JOIN US</a>
                     </li>
                 </div>
                 <div class="col text-center">
@@ -198,61 +130,61 @@
             </ul>
         </div>
     </nav>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <!--ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol -->
+    <div id="main_carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#main_carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#main_carousel" data-slide-to="1"></li>
+            <li data-target="#main_carousel" data-slide-to="2"></li>
+        </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-1.jpeg" alt="First slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>WE ARE <span class="caption1" style="color: #027db3"></span></h1>
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-9.jpg" alt="First slide">
+                <div class="carousel-caption d-md-block">
+                    <h1>WE ARE <span class="caption1 ibt_animated typewriter-1" style="color: #027db3; display: inline-block;">CREATIVE</span></h1>
                     <h5>We always implement new, different and fresh ideas</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-2.jpeg" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>WE ARE <span class="caption2" style="color: #027db3"></span></h1>
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-11.jpg" alt="Second slide">
+                <div class="carousel-caption d-md-block">
+                    <h1>WE ARE <span class="caption2 ibt_animated typewriter-2" style="color: #027db3; display: inline-block;">WEB DEVELOPERS</span></h1>
                     <h5>We develop modern, trendy and state of the art websites using latest technologies</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-3.jpeg" alt="Third slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>WE ARE <span class="caption3" style="color: #027db3"></span></h1>
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-6.jpeg" alt="Third slide">
+                <div class="carousel-caption d-md-block">
+                    <h1>WE ARE <span class="caption3 ibt_animated typewriter-3" style="color: #027db3; display: inline-block;">SYSTEM INTEGRATORS</span></h1>
                     <h5>We enable B2B, B2C integration using advanced framework with scope for scaling in the future</h5>
                 </div>
             </div>
         </div>
-        <!--a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <a class="carousel-control-prev" href="#main_carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" id="prev" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <a class="carousel-control-next" href="#main_carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" id="next" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a -->
+        </a>
     </div>
 </header>
 <div class="container bg-white" style="margin-top: 4%">
     <div class="row" style="padding: 15px">
-        <div class="col">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
             <div class="row">
-                <div class="col text-center ibt_header">
+                <div class="col  text-center ibt_header">
                     <h3>Our Vision</h3>
                     <hr/>
                 </div>
             </div>
             <div class="row" style="padding: 10px">
-                <div class="col text-center ibt_content">
+                <div class="col text-justify ibt_content">
                     <p>Interbind's vision is to become the strategic IT partner for our customers world-wide, a one-stop shop for all technological support required for our client's business needs. We aim to become a globally renowned corporation with a highly competent and passionate team delivering best-in-class, reliable and scalable IT solutions for businesses.</p>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-61">
             <div class="row">
                 <div class="col text-center ibt_header">
                     <h3>Our Mission</h3>
@@ -260,14 +192,14 @@
                 </div>
             </div>
             <div class="row" style="padding: 10px">
-                <div class="col text-center ibt_content">
+                <div class="col text-justify ibt_content">
                     <p>Our mission is to combine our technical expertise and domain knowledge to provide cost-effective IT solutions for our client's business needs. The company’s core belief lies in service and quality. We will strive to stretch beyond the call of duty to deliver with trust and commitment in the professional world. Achieving customer delight is our motto.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container bg-white" style="margin-top: 4%">
+<div class="container bg-white" id="ibt_services" style="margin-top: 4%">
     <div class="row" style="padding: 15px;">
         <div class="col text-center ibt_header">
             <h3>Our Services</h3>
@@ -280,19 +212,19 @@
         </div>
     </div>
     <div class="row" style="padding: 10px; margin-top: 4%;">
-        <div class="col text-center ibt_serv_icons icon_col_1">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_1">
             <div style="padding: 10px;">
                <div class="ibt_sprite_icons etp_icon"></div>
                 <h5>Enterprise Applications</h5>
-                <hr class="serv_hr_1"/>
-                <p class="ibt_serv_info etp_info">End to End Application Development Re-Engineering existing applications move to Cloud Computing Deployments Business Architecture Development Jumpstart Application Development Process</p>
+                <hr class="serv_hr"/>
+                <p class="ibt_serv_info">End to End Application Development Re-Engineering existing applications move to Cloud Computing Deployments Business Architecture Development Jumpstart Application Development Process</p>
             </div>
         </div>
-        <div class="col text-center ibt_serv_icons icon_col_2">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_2">
             <div style=" padding: 10px;">
                 <div class="ibt_sprite_icons etp_int_icon"></div>
                 <h5>Enterprise Integration</h5>
-                <hr class="serv_hr_2"/>
+                <hr class="serv_hr"/>
                 <p class="ibt_serv_info etp_int_info">B2B & B2C Integration Initiatives
                     Scope for integration and POC implementation
                     Migration to Service Oriented Architecture
@@ -300,11 +232,11 @@
                     Devise Quick to Market Strategies</p>
             </div>
         </div>
-        <div class="col text-center ibt_serv_icons icon_col_3">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_3">
             <div style="padding: 10px;">
                 <div class="ibt_sprite_icons mg_serv_icon"></div>
                 <h5>Managed Services</h5>
-                <hr class="serv_hr_3"/>
+                <hr class="serv_hr"/>
                 <p class="ibt_serv_info mg_serv_info">Design & Develop Managed Services
                     Create New Services Portfolio
                     Enable B2B through Services
@@ -314,11 +246,11 @@
         </div>
     </div>
     <div class="row" style="padding: 10px; margin-top: 4%;">
-        <div class="col text-center ibt_serv_icons icon_col_4">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_4">
             <div style="padding: 10px;">
                 <div class="ibt_sprite_icons mob_icon"></div>
                 <h5>Mobile Applications</h5>
-                <hr class="serv_hr_4"/>
+                <hr class="serv_hr"/>
                 <p class="ibt_serv_info mob_info">Native, HTML5 and Hybrid Applications
                     iOS / iPhone / iPad Mobile Applications
                     Android Mobile Applications
@@ -326,11 +258,11 @@
                     Enterprise Mobility Solutions</p>
             </div>
         </div>
-        <div class="col text-center ibt_serv_icons icon_col_5">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_5">
             <div style=" padding: 10px;">
                 <div class="ibt_sprite_icons etp_sln_icon"></div>
                 <h5>Enterprise Solutions</h5>
-                <hr class="serv_hr_5"/>
+                <hr class="serv_hr"/>
                 <p class="ibt_serv_info etp_sln_info">Sugar CRM / vTiger CRM Solutions
                     ERP Solutions
                     Business Process Management
@@ -338,11 +270,11 @@
                     Custom Application Development</p>
             </div>
         </div>
-        <div class="col text-center ibt_serv_icons icon_col_6">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_6">
             <div style="padding: 10px;">
                 <div class="ibt_sprite_icons ecom_icon"></div>
                 <h5>ECommerce Web Solutions</h5>
-                <hr class="serv_hr_6"/>
+                <hr class="serv_hr"/>
                 <p class="ibt_serv_info ecom_info">Magento ECommerce Development
                     Web Design and Development
                     SEO / SEM and Branding Services
@@ -352,11 +284,11 @@
         </div>
     </div>
     <div class="row" style="padding: 10px; margin-top: 4%;">
-        <div class="col text-center ibt_serv_icons icon_col_7">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_7">
             <div style="padding: 10px;">
                 <div class="ibt_sprite_icons offshore_icon"></div>
                 <h5>Offshore Development Team</h5>
-                <hr class="serv_hr_7"/>
+                <hr class="serv_hr"/>
                 <p class="ibt_serv_info offshore_info">Product Engineering
                     Conceptualization of Business Ideas
                     Prototype Development
@@ -364,11 +296,11 @@
                     Post Launch Support and Enhancements</p>
             </div>
         </div>
-        <div class="col text-center ibt_serv_icons icon_col_8">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_8">
             <div style=" padding: 10px;">
                 <div class="ibt_sprite_icons conslt_icon"></div>
                 <h5>Consulting</h5>
-                <hr class="serv_hr_8"/>
+                <hr class="serv_hr"/>
                 <p class="ibt_serv_info conslt_info">Business Process and System Design
                     Business and IT Systems Improvements
                     Re-Engineering Existing Systems
@@ -376,11 +308,11 @@
                     Project Management Support</p>
             </div>
         </div>
-        <div class="col text-center ibt_serv_icons icon_col_9">
+        <div class="col col-xs-6 text-center ibt_serv_icons icon_col_9">
             <div style="padding: 10px;">
                 <div class="ibt_sprite_icons it_supt_icon"></div>
                 <h5>IT Support</h5>
-                <hr class="serv_hr_9"/>
+                <hr class="serv_hr"/>
                 <p class="ibt_serv_info it_supt_info">24x7 Technical Support
                     Multi-level Support
                     T&M IT Support
@@ -390,7 +322,7 @@
         </div>
     </div>
 </div>
-<div class="container bg-white" style="margin-top: 4%;">
+<div class="container bg-white" id="ibt_abt_us" style="margin-top: 4%;">
     <div class="row" style="padding: 15px;">
         <div class="col text-center abt_us">
             <h3>About us</h3>
@@ -399,9 +331,9 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 90%;">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 150%;">
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel" style="margin: 0 auto; font-size: 25px; font-weight: 400">About us</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -423,55 +355,92 @@
         <div class="col text-left why_ibt">
             <h4>Why Interbind ?</h4>
             <p>Our customers choose us because we provide simple and pragmatic solution to problems using the best breed of technologies. We deliver on time with consistent result at all times, making us one of the most reliable software services provider.</p>
-            <div class="row" style="margin-top: 5%;padding: 15px;">
-                <div class="col text-center">
-                    <h5>Process oriented</h5>
-                    <hr class="hr">
-                    <p>We have defined standard set of process to be followed during product development or service deliveries. These processes can also be customised based on our customer needs.</p>
-                    <p>As we follow well defined process during project execution, end results are always predictable and consistent for every projects completed at Interbind.</p>
-                </div>
-                <div class="col text-center">
-                    <img src="<?php echo $url_img;?>process oriented.png" width="200" height="200">
-                </div>
-            </div>
-            <div class="row" style="margin-top: 5%; padding: 15px;">
-                <div class="col text-center">
-                    <img src="<?php echo $url_img;?>code_quality.png" width="200" height="200">
-                </div>
-                <div class="col text-center">
-                    <h5>Code Quality</h5>
-                    <hr class="hr">
-                    <p>We always believe in high quality deliverables and that's why we have implemented stringent process in code reviews.</p>
-                    <p>Our developers must adhere to the industry's best practices and guidelines while writing programs regardless of technologies or programming languages used.</p>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 5%; padding: 15px;">
-                <div class="col text-center">
-                    <h5>Customer Satisfaction</h5>
-                    <hr class="hr">
-                    <p>We work very closely with our customers to understand their problems and issues in making their business & IT systems co-exist.</p>
-                    <p>We spend great deal of our time in talking to our customers to get full context of the problem before jumping into offering solutions.</p>
-                </div>
-                <div class="col text-center">
-                    <img src="<?php echo $url_img;?>customer-satisfaction.png" width="200" height="200">
-                </div>
-            </div>
-            <div class="row" style="margin-top: 5%; padding: 15px;">
-                <div class="col text-center">
-                    <img src="<?php echo $url_img;?>team_approach.png" width="200" height="200">
-                </div>
-                <div class="col text-center">
-                    <h5>Unique Team & Approach</h5>
-                    <hr class="hr">
-                    <p>Our core strength is the experience and expertise of our team of architect, developers and testers with focus on high quality and timely deliveries.</p>
-                    <p>Our team is trained extermely on process, design and technologies before we start the actual implementation.</p>
-                </div>
-            </div>
+			<div id="why_carousel" class="carousel slide" data-ride="carousel">
+			  <!--ol class="carousel-indicators">
+				<li data-target="#why_carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#why_carousel" data-slide-to="1"></li>
+				<li data-target="#why_carousel" data-slide-to="2"></li>
+			  </ol-->
+			  <div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row" style="padding: 15px;">
+						<div class="col text-center">
+							<h5>Process oriented</h5>
+							<hr class="hr">
+							<div class="text-center why_mobile_icon">
+								<img src="<?php echo $url_img;?>process oriented.png" width="120" height="120">
+							</div>
+							<p>We have defined standard set of process to be followed during product development or service deliveries. These processes can also be customised based on our customer needs.</p>
+							<p>As we follow well defined process during project execution, end results are always predictable and consistent for every projects completed at Interbind.</p>
+						</div>
+						<div class="col text-center why_main_icon">
+							<img src="<?php echo $url_img;?>process oriented.png" width="200" height="200">
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+				  <div class="row" style=" padding: 15px;">						
+						<div class="col text-center">
+							<h5>Code Quality</h5>
+							<hr class="hr">
+							<div class="text-center why_mobile_icon">
+								<img src="<?php echo $url_img;?>code_quality.png" width="120" height="120">
+							</div>
+							<p>We always believe in high quality deliverables and that's why we have implemented stringent process in code reviews.</p>
+							<p>Our developers must adhere to the industry's best practices and guidelines while writing programs regardless of technologies or programming languages used.</p>
+						</div>
+						<div class="col text-center why_main_icon">
+							<img src="<?php echo $url_img;?>code_quality.png" width="200" height="200">
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row" style=" padding: 15px;">
+						<div class="col text-center">
+							<h5>Customer Satisfaction</h5>
+							<hr class="hr">
+							<div class="text-center why_mobile_icon">
+								<img src="<?php echo $url_img;?>customer-satisfaction.png" width="120" height="120">
+							</div>
+							<p>We work very closely with our customers to understand their problems and issues in making their business & IT systems co-exist.</p>
+							<p>We spend great deal of our time in talking to our customers to get full context of the problem before jumping into offering solutions.</p>
+						</div>
+						<div class="col text-center why_main_icon">
+							<img src="<?php echo $url_img;?>customer-satisfaction.png" width="200" height="200">
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row" style=" padding: 15px;">					
+						<div class="col text-center">
+							<h5>Unique Team & Approach</h5>
+							<hr class="hr">
+							<div class="text-center why_mobile_icon">
+								<img src="<?php echo $url_img;?>team_approach.png" width="120" height="120">
+							</div>
+							<p>Our core strength is the experience and expertise of our team of architect, developers and testers with focus on high quality and timely deliveries.</p>
+							<p>Our team is trained extermely on process, design and technologies before we start the actual implementation.</p>
+						</div>
+						<div class="col text-center why_main_icon">
+							<img src="<?php echo $url_img;?>team_approach.png" width="200" height="200">
+						</div>
+					</div>
+				</div>
+			  </div>
+			  <!--a class="carousel-control-prev" href="#why_carousel" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(0,0,0,.5);"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#why_carousel" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(0,0,0,.5);"></span>
+				<span class="sr-only">Next</span>
+			  </a -->
+			</div>
         </div>
     </div>
 </div>
 
-<div class="container bg-white" style="margin-top: 4%">
+<div class="container bg-white" id="ibt_portfolio" style="margin-top: 4%">
     <div class="row" style="padding: 15px;">
         <div class="col text-center ibt_portfolio">
             <h3>Our Portfolio</h3>
@@ -480,7 +449,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col text-center">
+        <div class="col-6 col-lg-3 col-xl-3 text-center">
             <div class="ibt_pf_icons">
                 <div class="ibt_pf_sprite_icons wh_icon"></div>
                 <h5>Warehouse Integration</h5>
@@ -488,7 +457,7 @@
                 <p>Front end systems integrated with warehouse for real time order fulfilments, stock management etc.,</p>
             </div>
         </div>
-        <div class="col text-center">
+        <div class="col-6 col-lg-3 col-xl-3 text-center">
             <div class="ibt_pf_icons">
                 <div class="ibt_pf_sprite_icons bi_icon"></div>
                 <h5>Business Integration</h5>
@@ -496,7 +465,7 @@
                 <p>Business model & services development, Business interfaces, Enabled business integration with other business via FTP, AS2, XML, Flat files, REST / Web Services</p>
             </div>
         </div>
-        <div class="col text-center">
+        <div class="col-6 col-lg-3 col-xl-3 text-center">
             <div class="ibt_pf_icons">
                 <div class="ibt_pf_sprite_icons sap_icon"></div>
                 <h5>SAP Integration</h5>
@@ -504,7 +473,7 @@
                 <p>Enabled SAP system integration via SAP IDOC Formats, Reports and ABAP.</p>
             </div>
         </div>
-        <div class="col text-center">
+        <div class="col-6 col-lg-3 col-xl-3 text-center">
             <div class="ibt_pf_icons">
                 <div class="ibt_pf_sprite_icons bui_icon"></div>
                 <h5>Backend / Business Services</h5>
@@ -514,7 +483,7 @@
         </div>
     </div>
     <div class="row" style="margin-top: 3%;">
-        <div class="col text-center">
+        <div class="col-6 col-lg-3 col-xl-3 text-center">
             <div class="ibt_pf_icons">
                 <div class="ibt_pf_sprite_icons ma_icon"></div>
                 <h5>Mobile App Development</h5>
@@ -522,7 +491,7 @@
                 <p>Native mobile application development in iOS & Android platforms. Hybrid application development using Ionic 2 & Angular 2.</p>
             </div>
         </div>
-        <div class="col text-center">
+        <div class="col-6 col-lg-3 col-xl-3 text-center">
             <div class="ibt_pf_icons">
                 <div class="ibt_pf_sprite_icons esb_icon"></div>
                 <h5>Enterprise Service Bus</h5>
@@ -530,7 +499,7 @@
                 <p>Configured, provisioned and implemented enterprise service bus to enable efficient integrations between various services within enterprise.</p>
             </div>
         </div>
-        <div class="col text-center">
+        <div class="col-6 col-lg-3 col-xl-3 text-center">
             <div class="ibt_pf_icons">
                 <div class="ibt_pf_sprite_icons pf_icon"></div>
                 <h5>Performance Refactoring</h5>
@@ -538,7 +507,7 @@
                 <p>Detail study of the current system to understand and remove performace bottle necks. Refactored to implement best practices and re-designed to accommodate scalability & extensibility.</p>
             </div>
         </div>
-        <div class="col text-center">
+        <div class="col-6 col-lg-3 col-xl-3 text-center">
             <div class="ibt_pf_icons">
                 <div class="ibt_pf_sprite_icons html_icon"></div>
                 <h5>HTML5, CSS3 & Bootstrap</h5>
@@ -548,7 +517,7 @@
         </div>
     </div>
 </div>
-<div class="container bg-white" style="margin-top: 4%;">
+<div class="container bg-white" id="ibt_joinus" style="margin-top: 4%;">
     <div class="row" style="padding: 15px;">
         <div class="col text-center join_us">
             <h3>Join us</h3>
@@ -558,8 +527,16 @@
     </div>
     <div class="row">
         <div class="col join_us">
-            <h5 style="text-decoration: underline">Current Openings</h5>
-            <p style="font-size: 14px">Thank you for your interest in Interbind Technologies Pvt Ltd. We do not have any job opening at the moment. Please come back again later.</p>
+            <h5 style="">Current Openings <span class="badge badge-info">1</span></h5>			
+            <table class="table table-responsive">
+				<tbody>
+					<tr>
+						<td><a class="job_title" href="https://www.indeedjobs.com/jobs/dd90656968b04f728053" target="_blank">Senior Software Engineer</a></td>
+						<td>Chennai</td>
+						<td>Full-time</td>
+					</tr>
+				</tbody>			
+			</table>
         </div>
     </div>
 </div>
@@ -596,9 +573,9 @@
 </div>
 
 <!-- Form Modal -->
-<div class="modal fade bd-example-modal-lg" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true" style="width: 90%;">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 150%;">
+<div class="modal fade bd-example-modal-lg" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="formModalLabel" style="margin: 0 auto; font-size: 25px; font-weight: 400">Contact us</h5>
                 <button type="button" class="close btn_form_close" data-dismiss="modal" aria-label="Close">
@@ -615,18 +592,18 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="username" placeholder="Enter your name" name="username" required>
+                                        <input type="text" class="form-control" id="username" placeholder="Enter your name" name="username" >
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" required>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" >
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject" name="subject" required>
+                                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject" name="subject" >
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <textarea class="form-control text_area" id="message" name="message" placeholder="Enter your message" required></textarea>
+                                        <textarea class="form-control text_area" id="message" name="message" placeholder="Enter your message" ></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -655,10 +632,10 @@
 </div>
 <div class="container-fluid bg-white" style="margin-top: 4%">
     <div class="row" style="padding: 15px">
-        <div class="col text-center">
+        <div class="col text-center ibt_footer">
             <p>© 2012-2017 Interbind Technologies Private Limited.</p>
         </div>
-        <div class="col text-center">
+        <div class="col text-center ibt_footer">
             <p>Write to us <a href="mailto:contact@interbind.in">contact@interbind.in</a></p>
         </div>
     </div>
