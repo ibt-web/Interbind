@@ -11,12 +11,13 @@ class Contact_form extends CI_Controller
 		$this->load->model('Form');
 		
 		$this->form_validation->set_rules('username', 'Username', 'required');
-		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('subject', 'Subject', 'required');
 		$this->form_validation->set_rules('message', 'Message', 'required');
 
 		if ($this->form_validation->run() == FALSE)
 		{
+				$this->form_validation->set_error_delimiters('', '');
 				$msg = validation_errors();
 				$respone['ok'] = 0;
 		}

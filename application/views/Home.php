@@ -29,13 +29,13 @@
     <script type="text/javascript" src="<?php echo $url_js;?>typed.min.js"></script>
     <script type="text/javascript" src="<?php echo $url_js;?>popper.min.js"></script>
     <script type="text/javascript" src="<?php echo $url_js;?>bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo $url_js;?>wow.min.js"></script>
 
     <script>
 		$(document).ready(function () {
-		
-            $('.carousel').carousel({
-                pause: false
-            });
+			new WOW().init();
+			
+			
             $(function () {
                 $(document).scroll(function () {
                     var $nav = $(".fixed-top");
@@ -47,7 +47,6 @@
 			
 			
 			$("#submit").on("click",function(){
-				
 				
 				var form = $("#form_contact_us").serializeArray();
 				
@@ -68,7 +67,6 @@
 						$(".error_msg").html(response.message);
 						$(".success_msg").hide();
 					}
-				
 				});
 				event.preventDefault();
 			});
@@ -138,21 +136,21 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-9.jpg" alt="First slide">
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>ibt_creative_1.jpg" alt="First slide">
                 <div class="carousel-caption d-md-block">
                     <h1>WE ARE <span class="caption1 ibt_animated typewriter-1" style="color: #027db3; display: inline-block;">CREATIVE</span></h1>
                     <h5>We always implement new, different and fresh ideas</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-11.jpg" alt="Second slide">
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>ibt_web_banner_1.jpg" alt="Second slide">
                 <div class="carousel-caption d-md-block">
                     <h1>WE ARE <span class="caption2 ibt_animated typewriter-2" style="color: #027db3; display: inline-block;">WEB DEVELOPERS</span></h1>
                     <h5>We develop modern, trendy and state of the art websites using latest technologies</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>banner-6.jpeg" alt="Third slide">
+                <img class="d-block w-100 carousel_img" src="<?php echo $url_img;?>ibt_sys_int.jpg" alt="Third slide">
                 <div class="carousel-caption d-md-block">
                     <h1>WE ARE <span class="caption3 ibt_animated typewriter-3" style="color: #027db3; display: inline-block;">SYSTEM INTEGRATORS</span></h1>
                     <h5>We enable B2B, B2C integration using advanced framework with scope for scaling in the future</h5>
@@ -215,7 +213,7 @@
         <div class="col col-xs-6 text-center ibt_serv_icons icon_col_1">
             <div style="padding: 10px;">
                <div class="ibt_sprite_icons etp_icon"></div>
-                <h5>Enterprise Applications</h5>
+                <h5 class="">Enterprise Applications</h5>
                 <hr class="serv_hr"/>
                 <p class="ibt_serv_info">End to End Application Development Re-Engineering existing applications move to Cloud Computing Deployments Business Architecture Development Jumpstart Application Development Process</p>
             </div>
@@ -367,13 +365,13 @@
 						<div class="col text-center">
 							<h5>Process oriented</h5>
 							<hr class="hr">
-							<div class="text-center why_mobile_icon">
+							<div class="text-center why_mobile_icon animated zoomInUp">
 								<img src="<?php echo $url_img;?>process oriented.png" width="120" height="120">
 							</div>
 							<p>We have defined standard set of process to be followed during product development or service deliveries. These processes can also be customised based on our customer needs.</p>
 							<p>As we follow well defined process during project execution, end results are always predictable and consistent for every projects completed at Interbind.</p>
 						</div>
-						<div class="col text-center why_main_icon">
+						<div class="col text-center why_main_icon animated zoomInUp">
 							<img src="<?php echo $url_img;?>process oriented.png" width="200" height="200">
 						</div>
 					</div>
@@ -383,13 +381,13 @@
 						<div class="col text-center">
 							<h5>Code Quality</h5>
 							<hr class="hr">
-							<div class="text-center why_mobile_icon">
+							<div class="ext-center why_mobile_icon animated zoomInUp">
 								<img src="<?php echo $url_img;?>code_quality.png" width="120" height="120">
 							</div>
 							<p>We always believe in high quality deliverables and that's why we have implemented stringent process in code reviews.</p>
 							<p>Our developers must adhere to the industry's best practices and guidelines while writing programs regardless of technologies or programming languages used.</p>
 						</div>
-						<div class="col text-center why_main_icon">
+						<div class="col text-center why_main_icon animated zoomInUp">
 							<img src="<?php echo $url_img;?>code_quality.png" width="200" height="200">
 						</div>
 					</div>
@@ -399,14 +397,14 @@
 						<div class="col text-center">
 							<h5>Customer Satisfaction</h5>
 							<hr class="hr">
-							<div class="text-center why_mobile_icon">
-								<img src="<?php echo $url_img;?>customer-satisfaction.png" width="120" height="120">
+							<div class="text-center why_mobile_icon animated zoomInUp">
+								<img src="<?php echo $url_img;?>customer-satisfaction_1.png" width="120" height="120">
 							</div>
 							<p>We work very closely with our customers to understand their problems and issues in making their business & IT systems co-exist.</p>
 							<p>We spend great deal of our time in talking to our customers to get full context of the problem before jumping into offering solutions.</p>
 						</div>
-						<div class="col text-center why_main_icon">
-							<img src="<?php echo $url_img;?>customer-satisfaction.png" width="200" height="200">
+						<div class="col text-center why_main_icon animated zoomInUp">
+							<img src="<?php echo $url_img;?>customer-satisfaction_1.png" width="200" height="200">
 						</div>
 					</div>
 				</div>
@@ -415,13 +413,13 @@
 						<div class="col text-center">
 							<h5>Unique Team & Approach</h5>
 							<hr class="hr">
-							<div class="text-center why_mobile_icon">
+							<div class="text-center why_mobile_icon animated zoomInUp">
 								<img src="<?php echo $url_img;?>team_approach.png" width="120" height="120">
 							</div>
 							<p>Our core strength is the experience and expertise of our team of architect, developers and testers with focus on high quality and timely deliveries.</p>
 							<p>Our team is trained extermely on process, design and technologies before we start the actual implementation.</p>
 						</div>
-						<div class="col text-center why_main_icon">
+						<div class="col text-center why_main_icon animated zoomInUp">
 							<img src="<?php echo $url_img;?>team_approach.png" width="200" height="200">
 						</div>
 					</div>
@@ -592,18 +590,18 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="username" placeholder="Enter your name" name="username" >
+                                        <input type="text" class="form-control" id="username" placeholder="Enter your name" name="username" required > 
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" >
+                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" required >
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject" name="subject" >
+                                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject" name="subject" required >
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <textarea class="form-control text_area" id="message" name="message" placeholder="Enter your message" ></textarea>
+                                        <textarea class="form-control text_area" id="message" name="message" placeholder="Enter your message" required ></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -623,10 +621,10 @@
         <div class="col text-center connect_us">
             <h3>Connect with us</h3>
             <hr class="hr"/>
-            <a class="message" href="mailto:contact@interbind.in"><i class="fa fa-envelope-square fa-2x"></i></a>
-            <a class="twitter" href="https://twitter.com/interbind" ><i class="fa fa-twitter-square fa-2x"></i></a>
-            <a class="facebook" href="https://www.facebook.com/interbind/"><i class="fa fa-facebook-square fa-2x"></i></a>
-            <a class="linkedin" href="https://www.linkedin.com/company/interbind-technologies"><i class="fa fa-linkedin-square fa-2x"></i></a>
+            <a class="message" href="mailto:contact@interbind.in"><i class="fa fa-envelope-square fa-2x wow animated shake"></i></a>
+            <a class="twitter" href="https://twitter.com/interbind" ><i class="fa fa-twitter-square fa-2x wow animated shake"></i></a>
+            <a class="facebook" href="https://www.facebook.com/interbind/"><i class="fa fa-facebook-square fa-2x wow animated shake"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/company/interbind-technologies"><i class="fa fa-linkedin-square fa-2x wow animated shake"></i></a>
         </div>
     </div>
 </div>
