@@ -26,18 +26,18 @@
     <link rel="stylesheet" href="<?php echo $url_css;?>style.css">
 <!-- Js -->
     <script type="text/javascript" src="<?php echo $url_js;?>jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="<?php echo $url_js;?>typed.min.js"></script>
+    <!--script type="text/javascript" src="<?php echo $url_js;?>typed.min.js"></script-->
     <script type="text/javascript" src="<?php echo $url_js;?>popper.min.js"></script>
     <script type="text/javascript" src="<?php echo $url_js;?>bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo $url_js;?>wow.min.js"></script>
 
     <script>
-		$(document).ready(function () {
+		$(document).ready(function () { //
 			new WOW().init();
-			
 			
             $(function () {
                 $(document).scroll(function () {
+				
                     var $nav = $(".fixed-top");
                     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
                     var $nav_link = $(".navbar-light .navbar-nav .nav-link");
@@ -46,42 +46,97 @@
             });
 			
 			
-			$("#submit").on("click",function(){
+			$(document).on('click', "#submit", function(){
+
+				var formValidation = false;
 				
-				var form = $("#form_contact_us").serializeArray();
+				var username = $("#username");
+				var email = $("#email");
+				var subject = $("#subject");
+				var message = $("#message");
 				
-				$.ajax({
-					method: 'POST',
-					url: "<?php echo base_url(); ?>" + "index.php/contact_form",
-					data:form,
-					dataType: 'json'
-				}).done(function(response){
-					if(response.ok == 1){
-						$(".success_msg").show();
-						$(".success_msg").html(response.message);
-						$(".error_msg").hide();
-						$("#form_contact_us").hide();
-					}
-					else{
-						$(".error_msg").show();
-						$(".error_msg").html(response.message);
-						$(".success_msg").hide();
-					}
-				});
-				event.preventDefault();
+				var error_msg = "";
+				
+				if (username.val() == "" || username.val() == null){					
+					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + username.attr("data-error") + "</p>";
+					$(".err_username").html(error_msg).show();					
+				} else {
+					$(".err_username").hide();
+					formValidation = true;
+				}
+				
+				
+				if (email.val() == "" || email.val() == null){					
+					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + email.attr("data-error") + "</p>";
+					$(".err_email").html(error_msg).show();					
+				} else {
+					$(".err_email").hide();
+					formValidation = true;
+				}
+				
+				
+				if (subject.val() == "" || subject.val() == null){					
+					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + subject.attr("data-error") + "</p>";
+					$(".err_subject").html(error_msg).show();					
+				} else {
+					$(".err_subject").hide();
+					formValidation = true;
+				}
+				
+				
+				if (message.val() == "" || message.val() == null){					
+					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + message.attr("data-error") + "</p>";
+					$(".err_message").html(error_msg).show();					
+				} else {
+					$(".err_message").hide();
+					formValidation = true;
+				}
+				
+				if(formValidation == true)
+				{
+					var form = $("#form_contact_us").serializeArray();
+					var form_status = $('<div class="form_status"></div>');
+					$.ajax({
+						method: 'POST',
+						url: "<?php echo base_url(); ?>" + "index.php/contact_form",
+						data:form,
+						dataType: 'json',
+						beforeSend: function(){
+							$('.beforeSend').html('<p><i class="fa fa-circle-o-notch fa-spin"></i> Please wait...</p>').fadeIn();
+						}
+					}).done(function(response){
+						if(response.ok == 1){
+							$('.beforeSend').delay(2800).fadeOut();
+							$(".success_msg").html(response.message).delay(3000).fadeIn();
+							$(".error_msg").hide();
+							$("#form_contact_us").hide();
+						}
+						else{
+							$(".error_msg").html(response.message).show();
+							$("#errorModal").modal();
+							$('.beforeSend').hide();
+							//alert(response.message);
+							$(".success_msg").hide();
+						}
+					});
+				} 
+				
 			});
 			
 			$(".btn_form_close").on("click",function(){
 				$(".success_msg").hide();
+				$(".err_username").hide();
+				$(".err_email").hide();
+				$(".err_subject").hide();
 				$(".error_msg").hide();
+				$(".err_message").hide();
 				$("#form_contact_us")[0].reset();
 				$("#form_contact_us").show();
 			});
-			
         });
     </script>
 </head>
-<body class="bg-light">
+<body class="bg-light" style="font-family: Eurostile® Next, Eurostile Round, Eurostile® LT;">
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
 	<a class="nav_logo_small" href="#"><img src="<?php echo $url_img;?>logo_4.png" width="215"></a>
@@ -582,7 +637,8 @@
             </div>
             <div class="modal-body form_modal">
                 <p>Thank you for your interest in Interbind Technologies. Please provide the following information about your business needs to help us serve you better. This information will enable us to route your request to the appropriate person. You should receive a response within 1 working day.</p>
-				<div class="error_msg" style="display:none;margin-bottom: 10px;"></div>
+				<!--div class="error_msg" style="display:none;margin-bottom: 10px;"></div-->
+				<div class="beforeSend text-center"></div>
 				<div class="success_msg text-center" style="display:none; margin-bottom: 10px; color:white; padding: 10px; background-color: darkseagreen;"></div>
                 <div class="row">
                     <div class="col text-center">
@@ -590,22 +646,26 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="username" placeholder="Enter your name" name="username" required > 
+                                        <input type="text" class="form-control" id="username" placeholder="Enter your name" data-error="Name is required"  name="username" > 
+										<div class="form_errors err_username"></div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" required >
+                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" data-error="Email is required" >
+										<div class="form_errors err_email"></div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject" name="subject" required >
+                                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject" name="subject" data-error="Subject is required" >
+										<div class="form_errors err_subject"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <textarea class="form-control text_area" id="message" name="message" placeholder="Enter your message" required ></textarea>
+                                        <textarea class="form-control text_area" id="message" name="message" placeholder="Enter your message" data-error="Message is required" ></textarea>
+										<div class="form_errors err_message"></div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary" id="submit" type="submit" id="submit">Submit</button>
+                            <button class="btn btn-primary" id="submit" type="button" >Submit</button>
                         </form>
                     </div>
                 </div>
@@ -616,6 +676,25 @@
     </div>
 </div>
 <!-- Form modal ends here-->
+
+<!-- server error modal -->
+<div class="modal fade bd-example-modal-lg" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel" style="margin: 0 auto; font-size: 25px; font-weight: 400">Check your fields.</h5>
+                <button type="button" class="close btn_error_close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body errorModal">
+                <div class="error_msg" style="display:none;margin-bottom: 10px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- server error modal ends here-->
+
 <div class="container bg-white" style="margin-top: 4%">
     <div class="row" style="padding: 15px">
         <div class="col text-center connect_us">

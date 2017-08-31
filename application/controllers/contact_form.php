@@ -17,7 +17,7 @@ class Contact_form extends CI_Controller
 
 		if ($this->form_validation->run() == FALSE)
 		{
-				$this->form_validation->set_error_delimiters('', '');
+				//$this->form_validation->set_error_delimiters('', '');
 				$msg = validation_errors();
 				$respone['ok'] = 0;
 		}
@@ -33,7 +33,7 @@ class Contact_form extends CI_Controller
 		
 			$this->Form->insert($data);
 			
-			$msg = "Thank you for choosing Interbind. Our customer executive will contact you shortly";
+			$msg = "Thank you for choosing Interbind. Our customer executive will contact you shortly.";
 			$response['ok'] = 1;
 		}
 		
