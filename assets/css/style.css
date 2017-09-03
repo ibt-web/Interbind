@@ -82,7 +82,7 @@
 }
 
 .typewriter-1 {
-	width: 65px;
+	width: 55px;
 	border-right: .10em solid white;
     white-space:nowrap;
 	margin: -3px auto;
@@ -92,7 +92,7 @@
 }
 
 .typewriter-2 {
-	width: 120px;
+	width: 110px;
 	border-right: .10em solid white;
     white-space:nowrap;
 	margin: -3px auto;
@@ -102,7 +102,7 @@
 }
 
 .typewriter-3 {
-	width: 145px;
+	width: 135px;
 	border-right: .10em solid white;
     white-space:nowrap;
 	margin: -3px auto;
@@ -517,30 +517,30 @@
 }
 
 .typewriter-1 {
-	width: 80px;
+	width: 65px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -4px auto;
+	margin: -3px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-2 {
-	width: 140px;
+	width: 125px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -4px auto;
+	margin: -3px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-3 {
-	width: 170px;
+	width: 155px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -4px auto;
+	margin: -3px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
@@ -945,30 +945,30 @@
 }
 
 .typewriter-1 {
-	width: 150px;
+	width: 130px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -6px auto;
+	margin: -7px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-2 {
-	width: 270px;
+	width: 245px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -6px auto;
+	margin: -7px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-3 {
-	width: 335px;
+	width: 305px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -6px auto;
+	margin: -7px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
@@ -2503,30 +2503,30 @@
 }
 
 .typewriter-1 {
-	width: 200px;
+	width: 170px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -8px auto;
+	margin: -9px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-2 {
-	width: 365px;
+	width: 325px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -8px auto;
+	margin: -9px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-3 {
-	width: 450px;
+	width: 405px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -8px auto;
+	margin: -9px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
