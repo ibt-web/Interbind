@@ -252,7 +252,7 @@
         </div>
     </div>
 </div>
-<div class="container bg-white" id="ibt_services" style="margin-top: 4%">
+<div class="container" id="ibt_services" style="margin-top: 4%; background-color: #3c8bbe; color: white;">
     <div class="row" style="padding: 15px;">
         <div class="col text-center ibt_header">
             <h3>Our Services</h3>
@@ -707,13 +707,13 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-white" style="margin-top: 4%">
+<div class="container-fluid" style="margin-top: 4%;background-color: #3c8bbe; color: white;">
     <div class="row" style="padding: 15px">
         <div class="col text-center ibt_footer">
             <p>© 2012-2017 Interbind Technologies Private Limited.</p>
         </div>
         <div class="col text-center ibt_footer">
-            <p>Write to us <a href="mailto:contact@interbind.in">contact@interbind.in</a></p>
+            <p>Write to us <a href="mailto:contact@interbind.in" style="color: darkgrey;">contact@interbind.in</a></p>
         </div>
     </div>
 </div>
