@@ -619,6 +619,8 @@
                     <hr class="hr"/>
                     <p><i class="fa fa-map-marker"></i> 90 Cecil Street #10-02 <br/> Singapore 069531</p>
                     <p><i class="fa fa-phone"></i> Phone: +65 6221 1008</p>
+					<p><i class="fa fa-envelope"></i> <a href="mailto:contact@interbind.in">contac@interbind.in</a></p>
+					<p><i class="fa fa-globe"></i> <a href="#">www.interbind.sg</a></p>
                 </div>
             </div>
         </div>
@@ -682,7 +684,7 @@
     <div class="modal-dialog  modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="errorModalLabel" style="margin: 0 auto; font-size: 25px; font-weight: 400">Check your fields.</h5>
+                <h5 class="modal-title" id="errorModalLabel" style="margin: 0 auto; font-size: 25px; font-weight: 400">Fields required.</h5>
                 <button type="button" class="close btn_error_close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

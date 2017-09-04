@@ -2917,30 +2917,30 @@
 }
 
 .typewriter-1 {
-	width: 200px;
+	width: 175px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -9px auto;
+	margin: -11px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-2 {
-	width: 360px;
+	width: 330px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -9px auto;
+	margin: -11px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-3 {
-	width: 450px;
+	width: 405px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -9px auto;
+	margin: -11px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
