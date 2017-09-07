@@ -30,10 +30,90 @@
     <script type="text/javascript" src="<?php echo $url_js;?>popper.min.js"></script>
     <script type="text/javascript" src="<?php echo $url_js;?>bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo $url_js;?>wow.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script>
 		$(document).ready(function () { //
 			new WOW().init();
+			
+			$(document).on('click', '#nav_services',function(event) {
+				event.preventDefault();
+				var full_url = '#ibt_services',
+					parts = full_url.split("#"),
+					trgt = parts[1],
+					target_offset = $("#"+trgt).offset(),
+					target_top = target_offset.top;
+				$('html, body').animate({scrollTop:target_top}, 600);
+				//$("#ibt_services").slideUp(500);
+			});
+			
+			$(document).on('click', '#nav_home',function(event) {
+				event.preventDefault();
+				var full_url = '#home',
+					parts = full_url.split("#"),
+					trgt = parts[1],
+					target_offset = $("#"+trgt).offset(),
+					target_top = target_offset.top;
+				$('html, body').animate({scrollTop:target_top}, 600);
+				//$("#ibt_services").slideUp(500);
+			});
+			
+			$(document).on('click', '#nav_logo',function(event) {
+				event.preventDefault();
+				var full_url = '#home',
+					parts = full_url.split("#"),
+					trgt = parts[1],
+					target_offset = $("#"+trgt).offset(),
+					target_top = target_offset.top;
+				$('html, body').animate({scrollTop:target_top}, 600);
+				//$("#ibt_services").slideUp(500);
+			});
+			
+			$(document).on('click', '#nav_about',function(event) {
+				event.preventDefault();
+				var full_url = '#ibt_abt_us',
+					parts = full_url.split("#"),
+					trgt = parts[1],
+					target_offset = $("#"+trgt).offset(),
+					target_top = target_offset.top;
+				$('html, body').animate({scrollTop:target_top}, 600);
+				//$("#ibt_services").slideUp(500);
+			});
+			
+			
+			$(document).on('click', '#nav_portfolio',function(event) {
+				event.preventDefault();
+				var full_url = '#ibt_portfolio',
+					parts = full_url.split("#"),
+					trgt = parts[1],
+					target_offset = $("#"+trgt).offset(),
+					target_top = target_offset.top;
+				$('html, body').animate({scrollTop:target_top}, 600);
+				//$("#ibt_services").slideUp(500);
+			});
+			
+			$(document).on('click', '#nav_joinus',function(event) {
+				event.preventDefault();
+				var full_url = '#ibt_joinus',
+					parts = full_url.split("#"),
+					trgt = parts[1],
+					target_offset = $("#"+trgt).offset(),
+					target_top = target_offset.top;
+				$('html, body').animate({scrollTop:target_top}, 600);
+				//$("#ibt_services").slideUp(500);
+			});
+			
+			
+			$(document).on('click', '#nav_contact',function(event) {
+				event.preventDefault();
+				var full_url = '#ibt_contact_us',
+					parts = full_url.split("#"),
+					trgt = parts[1],
+					target_offset = $("#"+trgt).offset(),
+					target_top = target_offset.top;
+				$('html, body').animate({scrollTop:target_top}, 600);
+				//$("#ibt_services").slideUp(500);
+			});
 			
             $(function () {
                 $(document).scroll(function () {
@@ -44,40 +124,57 @@
                     $nav_link.toggleClass('scrolled-link', $(this).scrollTop() > $nav.height());
                 });
             });
-			
-			
+		
 			$(document).on('click', "#submit", function(){
-
+				
+				function isValidEmailAddress(emailAddress) {
+					var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+					return pattern.test(emailAddress);
+				}
+				
 				var formValidation = false;
 				
 				var username = $("#username");
 				var email = $("#email");
 				var subject = $("#subject");
 				var message = $("#message");
+				var captchaResponse = grecaptcha.getResponse();
 				
 				var error_msg = "";
 				
 				if (username.val() == "" || username.val() == null){					
-					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + username.attr("data-error") + "</p>";
-					$(".err_username").html(error_msg).show();					
+					error_msg = "<div class='arrow_up'></div><p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + username.attr("data-error") + "</p>";
+					$(".err_username").html(error_msg).show();
+					formValidation = false;
 				} else {
 					$(".err_username").hide();
 					formValidation = true;
 				}
 				
 				
-				if (email.val() == "" || email.val() == null){					
+				if (email.val() == "" || email.val() == null){
 					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + email.attr("data-error") + "</p>";
-					$(".err_email").html(error_msg).show();					
+					$(".err_email").html(error_msg).show();
+					formValidation = false;
 				} else {
+					if(isValidEmailAddress(email.val()) == false ){
+						error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + email.attr("data-valid-error") + "</p>";
+					$(".valid_err_email").html(error_msg).show();
 					$(".err_email").hide();
-					formValidation = true;
+					formValidation = false;
+					}
+					else{
+						$(".err_email").hide();
+						$(".valid_err_email").hide();
+						formValidation = true;
+					}
 				}
 				
 				
 				if (subject.val() == "" || subject.val() == null){					
 					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + subject.attr("data-error") + "</p>";
-					$(".err_subject").html(error_msg).show();					
+					$(".err_subject").html(error_msg).show();
+					formValidation = false;
 				} else {
 					$(".err_subject").hide();
 					formValidation = true;
@@ -86,9 +183,26 @@
 				
 				if (message.val() == "" || message.val() == null){					
 					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + message.attr("data-error") + "</p>";
-					$(".err_message").html(error_msg).show();					
+					$(".err_message").html(error_msg).show();
+					formValidation = false;					
 				} else {
 					$(".err_message").hide();
+					formValidation = true;
+				}
+				
+				if (captchaResponse.length == 0){					
+					error_msg = "<p><i class='fa fa-exclamation-circle' style='color: red;'></i> " + $('.g-recaptcha').attr("data-error") + "</p>";
+					$(".err_captcha").html(error_msg).show();
+					formValidation = false;					
+				} else {
+					$(".err_captcha").hide();
+					formValidation = true;
+				}
+				
+				if((username.val() && email.val() && subject.val() && message.val()) == "" || (username.val() && email.val() && subject.val() && message.val()) == null || captchaResponse.length == 0){
+					formValidation = false;
+				}
+				else{
 					formValidation = true;
 				}
 				
@@ -133,13 +247,30 @@
 				$("#form_contact_us")[0].reset();
 				$("#form_contact_us").show();
 			});
+			
+				var _gaq = _gaq || [];
+				_gaq.push(["_setAccount", "UA-105795985-1"]);
+				_gaq.push(["_setDomainName", "none"]);
+				_gaq.push(["_trackPageview"]);
+			
+				  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+				  ga('create', 'UA-105795985-1', {"cookieDomain":"none"});
+				  ga('send', 'pageview');
+				  
+
+
+			
         });
     </script>
 </head>
-<body class="bg-light" style="font-family: Eurostile® Next, Eurostile Round, Eurostile® LT;">
+<body class="bg-light" style="font-family: Eurostile® Next, Eurostile Round, Eurostile® LT;" id="home">
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-	<a class="nav_logo_small" href="#"><img src="<?php echo $url_img;?>logo_4.png" width="215"></a>
+	<a class="nav_logo_small" href="#home"><img src="<?php echo $url_img;?>logo_4.png" width="215"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -147,37 +278,37 @@
             <ul class="navbar-nav w-100">
                 <div class="col text-center">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#home" id="nav_home">HOME <span class="sr-only">(current)</span></a>
                     </li>
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#ibt_services">SERVICES</a>
+                        <a class="nav-link" href="#ibt_services" id="nav_services">SERVICES</a>
                     </li>
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#ibt_abt_us">ABOUT US</a>
+                        <a class="nav-link" href="#ibt_abt_us" id="nav_about">ABOUT US</a>
                     </li>
                 </div>
                 <div class="col-4 text-center">
                     <li class="nav-item nav_logo">
-                        <a class="" href="#"><img src="<?php echo $url_img;?>logo_4.png" width="280"></a>
+                        <a class="" href="#home" id="nav_logo"><img src="<?php echo $url_img;?>logo_4.png" width="280"></a>
                     </li>
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#ibt_portfolio">PORTFOLIO</a>
+                        <a class="nav-link" href="#ibt_portfolio" id="nav_portfolio">PORTFOLIO</a>
                     </li>
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#ibt_joinus">JOIN US</a>
+                        <a class="nav-link" href="#ibt_joinus" id="nav_joinus">JOIN US</a>
                     </li>
                 </div>
                 <div class="col text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#ibt_contact_us">CONTACT US</a>
+                        <a class="nav-link" href="#ibt_contact_us" id="nav_contact">CONTACT US</a>
                     </li>
                 </div>
             </ul>
@@ -252,7 +383,7 @@
         </div>
     </div>
 </div>
-<div class="container" id="ibt_services" style="margin-top: 4%; background-color: #3c8bbe; color: white;">
+<div class="container" id="ibt_services" style="margin-top: 4%; background-color: #2e6da4; color: white;">
     <div class="row" style="padding: 15px;">
         <div class="col text-center ibt_header">
             <h3>Our Services</h3>
@@ -420,7 +551,7 @@
 						<div class="col text-center">
 							<h5>Process oriented</h5>
 							<hr class="hr">
-							<div class="text-center why_mobile_icon animated zoomInUp">
+							<div class="text-center why_mobile_icon animated zoomInDown">
 								<img src="<?php echo $url_img;?>process oriented.png" width="120" height="120">
 							</div>
 							<p>We have defined standard set of process to be followed during product development or service deliveries. These processes can also be customised based on our customer needs.</p>
@@ -436,7 +567,7 @@
 						<div class="col text-center">
 							<h5>Code Quality</h5>
 							<hr class="hr">
-							<div class="ext-center why_mobile_icon animated zoomInUp">
+							<div class="ext-center why_mobile_icon animated zoomInDown">
 								<img src="<?php echo $url_img;?>code_quality.png" width="120" height="120">
 							</div>
 							<p>We always believe in high quality deliverables and that's why we have implemented stringent process in code reviews.</p>
@@ -452,7 +583,7 @@
 						<div class="col text-center">
 							<h5>Customer Satisfaction</h5>
 							<hr class="hr">
-							<div class="text-center why_mobile_icon animated zoomInUp">
+							<div class="text-center why_mobile_icon animated zoomInDown">
 								<img src="<?php echo $url_img;?>customer-satisfaction_1.png" width="120" height="120">
 							</div>
 							<p>We work very closely with our customers to understand their problems and issues in making their business & IT systems co-exist.</p>
@@ -468,7 +599,7 @@
 						<div class="col text-center">
 							<h5>Unique Team & Approach</h5>
 							<hr class="hr">
-							<div class="text-center why_mobile_icon animated zoomInUp">
+							<div class="text-center why_mobile_icon animated zoomInDown">
 								<img src="<?php echo $url_img;?>team_approach.png" width="120" height="120">
 							</div>
 							<p>Our core strength is the experience and expertise of our team of architect, developers and testers with focus on high quality and timely deliveries.</p>
@@ -570,28 +701,31 @@
         </div>
     </div>
 </div>
-<div class="container bg-white" id="ibt_joinus" style="margin-top: 4%;">
+<div class="container" id="ibt_joinus" style="margin-top: 4%; background-color:#32c8e6; color: white;">
     <div class="row" style="padding: 15px;">
         <div class="col text-center join_us">
             <h3>Join us</h3>
             <hr class="hr"/>
-            <p>If you share our vision and wants to be part of our mission, email your resume to <a href="mailto:careers@interbind.in">careers@interbind.in</a></p>
+            <p>If you share our vision and wants to be part of our mission, email your resume to <a href="mailto:careers@interbind.in" style="color: wheat;">careers@interbind.in</a></p>
         </div>
     </div>
     <div class="row">
         <div class="col join_us">
             <h5 style="">Current Openings <span class="badge badge-info">1</span></h5>			
-            <table class="table table-responsive">
-				<tbody>
-					<tr>
-						<td><a class="job_title" href="https://www.indeedjobs.com/jobs/dd90656968b04f728053" target="_blank">Senior Software Engineer</a></td>
-						<td>Chennai</td>
-						<td>Full-time</td>
-					</tr>
-				</tbody>			
-			</table>
         </div>
     </div>
+	<div class="row text-center" style="margin-top: 2%;">
+		<div class="col" style="margin-bottom: 3%;">
+			<div class="card text-center" style="width: 12rem; height: 18rem; margin: 0 auto; color: #000;border-radius: 40px;">
+			  <img class="card-img-top" src="<?php echo $url_img; ?>Developer.png" alt="Card image cap">
+			  <div class="card-block" style="margin-top: 5px;">
+				<p class="card-title"><b><a class="cp-snippet-jobTitle" href="https://www.indeedjobs.com/jobs/dd90656968b04f728053" target="_blank" data-tn-link="">Senior Software Engineer</a></b></p>
+				<p class="card-text">Full-time</p>
+				<p class="card-text">Chennai.</p>
+			  </div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="container bg-white" style="margin-top: 4%" id="ibt_contact_us">
     <div class="row" style="padding: 15px;">
@@ -652,8 +786,9 @@
 										<div class="form_errors err_username"></div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" data-error="Email is required" >
+                                        <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" data-error="Email is required" data-valid-error="Valid Email required" >
 										<div class="form_errors err_email"></div>
+										<div class="form_errors valid_err_email"></div>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="subject" placeholder="Enter your subject" name="subject" data-error="Subject is required" >
@@ -664,6 +799,10 @@
                                     <div class="form-group">
                                         <textarea class="form-control text_area" id="message" name="message" placeholder="Enter your message" data-error="Message is required" ></textarea>
 										<div class="form_errors err_message"></div>
+                                    </div>
+									<div class="form-group">
+                                        <div class="g-recaptcha" data-sitekey="6Le4vS8UAAAAAE38bb6XCd81PjxSW2piXMbMVeDc" data-error="Captcha required"></div>
+										<div class="form_errors err_captcha"></div>
                                     </div>
                                 </div>
                             </div>
@@ -697,7 +836,7 @@
 </div>
 <!-- server error modal ends here-->
 
-<div class="container bg-white" style="margin-top: 4%">
+<div class="container bg-white" style="margin-top: 4%;border-radius: 50px;">
     <div class="row" style="padding: 15px">
         <div class="col text-center connect_us">
             <h3>Connect with us</h3>
@@ -709,7 +848,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid" style="margin-top: 4%;background-color: #3c8bbe; color: white;">
+<div class="container-fluid" style="margin-top: 4%;background-color: #2e6da4; color: white;">
     <div class="row" style="padding: 15px">
         <div class="col text-center ibt_footer">
             <p>© 2012-2017 Interbind Technologies Private Limited.</p>
