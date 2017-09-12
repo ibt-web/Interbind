@@ -1,12 +1,11 @@
 html,body {
         width: 100%;
         height: 100%;
-        position: relative; 
 }
 
 
 @font-face {
-   font-family: myFirstFont;
+   font-family: myFirstFont; 
    src: url(../fonts/eurostile-webfont.woff);
 }
 
@@ -30,6 +29,10 @@ html,body {
 
 .card-block p{
 	line-height: 1.1;
+}
+
+
+
 }
 /* Screen below 400 */
 @media (min-width: 320px) and (max-width: 390px){
@@ -2588,6 +2591,23 @@ html,body {
 .navbar-light .navbar-nav .nav-link{
     color: white;
 }
+
+.navbar-light .navbar-nav .nav-link::after{
+    content: '';
+    display: block;
+    margin: auto;
+    height: 0px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+.navbar-light .navbar-nav .nav-link:hover:after{
+    width: 70%;
+    height: 5%;
+    border: 1px solid white;
+    border-radius: 50px;
+
+}
 .navbar-light .navbar-nav .active>.nav-link {
     color: white;
 }
@@ -2656,7 +2676,7 @@ html,body {
 
 
 .ibt_serv_info {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 100;
     text-align: justify;
 	opacity:0;
@@ -2800,7 +2820,7 @@ html,body {
 }
 
 .ibt_pf_icons p{
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 100;
     text-align: justify;
     padding: 12px;
@@ -2938,30 +2958,30 @@ html,body {
 }
 
 .typewriter-1 {
-	width: 175px;
+	width: 180px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -11px auto;
+	margin: -8px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-2 {
-	width: 330px;
+	width: 345px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -11px auto;
+	margin: -8px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
 }
 
 .typewriter-3 {
-	width: 405px;
+	width: 427px;
 	border-right: .10em solid white;
     white-space:nowrap;
-	margin: -11px auto;
+	margin: -8px auto;
     overflow:hidden;
     -webkit-animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
     animation: type .9s steps(50, end), blink-caret .5s step-end infinite;
@@ -3028,5 +3048,30 @@ html,body {
 
 }
 
+.parallax {
+      /* The image used */
+    background-image: url("../img/banner-11.jpg");
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	min-width: 500px;
 }
+
+.Enterprise_overview{
+	padding: 50px; 
+	border: 10px solid white; 
+	position: absolute;
+	top: 40%;
+	left: 26%;
+	width: 45%;
+}
+
+}
+
 
