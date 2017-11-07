@@ -4,13 +4,13 @@ html,body {
 }
 
 
-@font-face {
+/*@font-face {
    font-family: myFirstFont; 
    src: url(../fonts/eurostile-webfont.woff);
-}
+}*/
 
 *{
-	font-family: myFirstFont;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .ibt_animated {

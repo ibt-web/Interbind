@@ -95,5 +95,29 @@ $url_img = base_url().'assets/img/';
 		</div>
 	</div>
 </div>
+
+<div class="container" style="margin-top: 13%;">
+	<div class="row text-center">
+		<div class="col-6" style="border:1px solid red">
+			<h3>Loreum Ipsum</h3>
+			<ul style="list-style: none;">
+				<?php 
+					
+					for($i = 1; $i<=6; $i++){
+						echo "<li>list - ".$i."</li>";
+					}
+				
+				?>
+			</ul>
+		</div>
+		<div class="col-6" style="border:1px solid black">
+			<div class="row">
+				<div class="col-12">
+					<h3> How loreum ipsum?</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
