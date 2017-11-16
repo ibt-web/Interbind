@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://interbind-tech.com';
-$config['base_url'] = 'http://192.168.0.113:81';
+$config['base_url'] = 'http://192.168.0.123:81';
 
 /*
 |--------------------------------------------------------------------------
